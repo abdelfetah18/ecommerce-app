@@ -1,0 +1,36 @@
+{
+  "name": "ecommerce-app",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@paypal/react-paypal-js": "^7.8.1",
+    "@sanity/client": "^3.3.3",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "chart.js": "^3.8.2",
+    "cookie": "^0.5.0",
+    "formidable": "^2.0.1",
+    "framer-motion": "^6.5.1",
+    "jose": "^4.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
+    "react-paypal-js": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.3",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
+  }
+}

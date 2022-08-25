@@ -1,0 +1,41 @@
+e-commerce website:
+
+basic user actions:
+	register
+	login
+	search or explore
+	add item to cart
+	remove item from cart 
+	checkout
+	edit profile image
+	edit profile number
+	edit profile email
+	edit profile username
+	add new payment method
+	edit payment method
+	remove payment method
+
+admin actions:
+	login
+	check the orders
+	change order state
+	add new product
+	remove product
+	edit product
+	add new carttegory
+	remove category
+	edit category
+	get all statics
+
+
+users,orders,categories,products,payments,carts
+
+colors:
+	nav_bg: #2c3040
+	dashboard_bg: #252936
+	title: #cbcbcd
+	revenue: #f5f5f5
+	dailyrevune: #87878a
+	+11% : #208a3d
+	bg +11%: #314446
+	
