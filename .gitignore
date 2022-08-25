@@ -34,3 +34,5 @@ yarn-error.log*
 .vercel
 
 /database-server
+private_key.pem
+public_key.pem
