@@ -27,7 +27,7 @@ for the database, recently, i am using [`sanity.io`](https://sanity.io) , ( `San
 
 ### Database Schema:
 
-```json
+```
 [
     {
       title:"users",
