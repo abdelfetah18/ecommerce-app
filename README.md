@@ -233,14 +233,33 @@ For Authentication and Authorization i am using `JWT (JSON Web Token)`.i am usin
 
 ---
 
-## Images from the app
-![1](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/main/public/1.png)
-![2](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/2.png)
-![3](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/3.png)
-![4](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/4.png)
-![5](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/5.png)
-![6](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/6.png)
-![7](https://raw.githubusercontent.com/abdelfetah18/my-chat-app/master/public/7.png)
+## TailWindCSS
 
+to make make the project more easy to design, i used TailWind which is a CSS Framework.
+
+
+## Images from the app
+![1](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/1.png)
+![2](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/2.png)
+![3](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/3.png)
+![4](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/4.png)
+![5](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/5.png)
+![6](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/6.png)
+![7](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/7.png)
+![8](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/8.png)
+
+---
+
+## Admin Dashboard:
+
+---
+
+![9](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/9.png)
+![10](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/10.png)
+![11](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/11.png)
+![12](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/12.png)
+![13](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/13.png)
+![14](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/14.png)
+![15](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/15.png)
 
 Thanks for reading and see you in my next project.
