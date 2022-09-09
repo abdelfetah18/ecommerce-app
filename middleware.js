@@ -1,7 +1,7 @@
 import { jwtVerify,importSPKI,SignJWT,importPKCS8 } from "jose";
 import { PrivateKey,PublicKey } from "./gloabal";
 import { NextResponse,NextRequest } from 'next/server';
-const STATIC_PROTECTED_ROUTES = ["/","/check_out","/api/user/check_out","/api/user/search"];
+const STATIC_PROTECTED_ROUTES = ["/","/check_out","/api/user/check_out"];
 
 export default async function middleware(req,res){
     //console.log('\x1b[33m%s\x1b[0m', "path:",req.nextUrl.pathname);

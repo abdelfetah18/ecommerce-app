@@ -9,7 +9,7 @@ export default function Search({ categories,search }){
 
     async function searchFor(){
         try {
-            var response = await axios.get("/api/user/search?q="+q,{ withCredentials:true });
+            var response = await axios.get("/api/search?q="+q,{ withCredentials:true });
         } catch (err) {
             console.log(err);
         } finally {
