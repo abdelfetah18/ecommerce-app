@@ -1,4 +1,4 @@
-import { getData } from "../../../database/client";
+import { getData } from "../../database/client";
 
 export default async function handler(req, res) {
     try {
