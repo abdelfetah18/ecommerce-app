@@ -72,13 +72,15 @@ export default function Shop({ products,category_name }){
                         }
 
                         return(
-                            <div key={i} onClick={selectProduct} className={styles.product_wrapper}>
-                                <div className={styles.image_wrapper}>
-                                    <img className={styles.image} src={p.images[0].url} />
+                            <div key={i} className={styles.product_container}>
+                                <div onClick={selectProduct} className={styles.product_wrapper}>
+                                    <div className={styles.image_wrapper}>
+                                        <img className={styles.image} src={p.images[0].url} />
+                                    </div>
+                                    <div className={styles.name}>{p.name}</div>
+                                    <div className={styles.p_category}>{p.category.name}</div>
+                                    <div className={styles.price}>${p.price.value}</div>
                                 </div>
-                                <div className={styles.name}>{p.name}</div>
-                                <div className={styles.p_category}>{p.category.name}</div>
-                                <div className={styles.price}>${p.price.value}</div>
                             </div>
                         )
                     })
@@ -109,7 +111,8 @@ const styles = {
     directory:"text-sm font-semibold px-2 border-r-2 text-[#909090] cursor-pointer",
     category:"text-sm font-semibold px-2 cursor-pointer",
     products_wrapper:"w-full flex flex-row flex-wrap mt-4",
-    product_wrapper:"flex flex-col w-1/5 items-center mx-2 my-2 cursor-pointer hover:px-2  transition-linear duration-300 hover:shadow-xl",
+    product_container:"flex flex-col w-1/4 my-4 items-center ",
+    product_wrapper:"flex flex-col w-11/12 items-center cursor-pointer hover:px-2  transition-linear duration-300 hover:shadow-xl",
     image_wrapper:"w-full rounded bg-gray-200 flex flex-col items-center",
     image:"h-52 object-cover rounded",
     name:"w-full font-semibold text-base px-1 py-2",
