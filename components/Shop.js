@@ -112,10 +112,10 @@ const styles = {
     category:"text-sm font-semibold px-2 cursor-pointer",
     products_wrapper:"w-full flex flex-row flex-wrap mt-4",
     product_container:"flex flex-col w-1/4 my-4 items-center ",
-    product_wrapper:"flex flex-col w-11/12 items-center cursor-pointer hover:px-2  transition-linear duration-300 hover:shadow-xl",
+    product_wrapper:"rounded flex flex-col w-11/12 items-center cursor-pointer hover:px-1  transition-linear duration-300 hover:shadow-xl",
     image_wrapper:"w-full rounded bg-gray-200 flex flex-col items-center",
-    image:"h-52 object-cover rounded",
-    name:"w-full font-semibold text-base px-1 py-2",
-    p_category:"w-full font-semibold text-gray-600 text-sm px-1 py-2",
-    price:"w-full font-meduim text-sm px-1 py-2"
+    image:"h-52 object-contain rounded",
+    name:"w-full font-semibold text-lg w-11/12 py-2",
+    p_category:"w-full font-semibold text-gray-600 text-sm w-11/12 py-2",
+    price:"w-full font-semibold text-sm py-2 w-11/12"
 };
