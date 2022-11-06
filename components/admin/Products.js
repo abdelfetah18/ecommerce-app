@@ -269,13 +269,15 @@ export default function Products({ products,categories,category }){
                             }
 
                             return(
-                                <div key={i} onClick={editProduct} className={styles.product_wrapper}>
-                                    <div className={styles.product_image_wrapper}>
-                                        <img className={styles.product_image} alt="product_image" src={p.images[0].url} />
+                                <div key={i} onClick={editProduct} className={styles.product_container}>
+                                    <div onClick={editProduct} className={styles.product_wrapper}>
+                                        <div className={styles.product_image_wrapper}>
+                                            <img className={styles.product_image} alt="product_image" src={p.images[0].url} />
+                                        </div>
+                                        <div className={styles.product_name}>{p.name}</div>
+                                        <div className={styles.product_category}>{p.category.name}</div>
+                                        <div className={styles.product_price}>${p.price.value}</div>
                                     </div>
-                                    <div className={styles.product_name}>{p.name}</div>
-                                    <div className={styles.product_category}>{p.category.name}</div>
-                                    <div className={styles.product_price}>${p.price.value}</div>
                                 </div>
                             )
                         })
@@ -360,7 +362,8 @@ const styles = {
     products_category_wrapper:"w-11/12 flex flex-row items-center",
     products_category:"text-[#bdbdbd] text-base font-semibold px-4 py-2 rounded-t-lg mt-2 cursor-pointer",
     products_wrapper:"w-11/12 bg-[#252936] rounded-b-lg rounded-r-lg p-5 flex flex-row flex-wrap",
-    product_wrapper:"w-1/6 mx-2 flex flex-col items-center bg-[#2c3040] shadow-xl rounded-lg cursor-pointer",
+    product_container:"w-1/5 flex flex-col items-center my-2",
+    product_wrapper:"w-11/12 flex flex-col items-center bg-[#2c3040] shadow-xl rounded-lg cursor-pointer",
     product_image_wrapper:"w-full h-52 rounded-lg flex flex-col items-center bg-white",
     product_image:" h-full rounded-lg object-cover",
     product_name:"w-11/12 text-base font-semibold text-[#ebebeb] py-2",

@@ -25,7 +25,7 @@ export default function Dashboard({ user,today_orders,total_custumers,last_order
             var mm = today.getMonth();
             var yy = today.getFullYear();
             for(var i=0;i<31;i++){
-                list.push((((dd+i)%(mm%2 == 0 && mm != 8 && m!= 2 ? 30 : 31))+1).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+(dd+i > 30 ? mm+1 : mm).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+yy);
+                list.push((((dd+i)%(mm%2 == 0 && mm != 8 && mm!= 2 ? 30 : 31))+1).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+(dd+i > 30 ? mm+1 : mm).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+yy);
                 data.push(0);
             }
             for(var i=0;i<selected_user.mounth_orders.length;i++){
