@@ -29,7 +29,7 @@ export default function Input({ value_state,placeholder,type }){
 
     return(
         <div className="w-2/3 relative h-14">                            
-            <input type={type} className="absolute bg-white border-2 rounded-lg w-full px-4 py-2" onChange={(evt) => setValue(evt.target.value)} value={value} onFocus={onFocus} onBlur={onBlur} />
+            <input type={type} className="absolute bg-white border-2 rounded-lg w-full px-4 py-2 text-base" onChange={(evt) => setValue(evt.target.value)} value={value} onFocus={onFocus} onBlur={onBlur} />
             <motion.div onClick={onFocus} animate={label_animation} className="absolute top-2 left-4 text-[#999999] text-base">{placeholder}</motion.div>
         </div>
     )

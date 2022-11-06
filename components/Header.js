@@ -139,9 +139,9 @@ export default function Header({ user }) {
             */}
             <div className={styles.icon_wrapper} >
                 <FaCog onClick={toggleSettings} className={styles.icon} />
-                <motion.div animate={settingsAnimation} className="absolute right-8 top-8 hidden opacity-0 flex-col items-center rounded-lg py-2 w-60 bg-gray-100 shadow-xl">
+                <motion.div animate={settingsAnimation} className="absolute right-8 top-8 hidden opacity-0 flex-col items-center py-2 w-60 bg-gray-100 shadow-xl">
                     <Link href={"/my_profile/my_orders"}>
-                        <div className="flex flex-row my-1 w-11/12 items-center ease-linear duration-300 cursor-pointer hover:bg-gray-200 p-2 rounded-lg">
+                        <div className="flex flex-row my-1 w-11/12 items-center ease-linear duration-300 cursor-pointer hover:bg-gray-200 p-2">
                             <div className="w-10 flex flex-col items-center">
                                 <img className="h-10 w-10 rounded-full bg-white" src={user.profile_image ? user.profile_image : "https://cdn.sanity.io/images/a6hagb75/production/fb17726fe38ca05bb9d8ac35b1dd3ad11ea4dbbf-752x748.jpg" } />
                             </div>
@@ -151,7 +151,7 @@ export default function Header({ user }) {
                             </div>
                         </div>
                     </Link>
-                    <Link href={"/user/sign_out"}><div className="mt-4 w-11/12 text-center font-semibold rounded-lg py-1 cursor-pointer ease-linear duration-300 bg-gray-200 hover:bg-gray-300">sign out</div></Link>
+                    <Link href={"/user/sign_out"}><div className="mt-4 w-11/12 text-center font-semibold py-1 cursor-pointer ease-linear duration-300 bg-gray-200 hover:bg-gray-300">sign out</div></Link>
                 </motion.div>
             </div>
         </div>

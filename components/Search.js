@@ -41,8 +41,8 @@ export default function Search({ categories,search }){
 }
 
 const styles = {
-    container:"w-1/5 flex flex-col items-center bg-white shadow-xl py-4 h-full rounded-tr-lg",
-    search_wrapper:"w-5/6 flex flex-row items-center rounded-xl bg-gray-100 ",
+    container:"w-1/5 flex flex-col items-center bg-white shadow-xl py-4 h-full rounded-t-lg",
+    search_wrapper:"w-11/12 flex flex-row items-center rounded-lg bg-gray-100 ",
     search_icon:"w-1/6 h-8 py-2 text-[#909090]",
     search_input:"text-base font-medium w-5/6 px-2 bg-gray-100 rounded-xl text-[#616161]",
     wrapper:"w-5/6 flex flex-col items-center my-5",

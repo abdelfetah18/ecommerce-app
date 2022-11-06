@@ -24,7 +24,7 @@ export default function Home({ products,categories,user }) {
   var [_products,setProducts] = useState(products);
   
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-gray-50">
+    <div className="w-screen h-screen flex flex-col items-center overflow-auto bg-slate-50">
       <Header user={user} />
       <Categories category_name={category_name} categories={categories} />
       <div className="flex flex-row w-11/12 mt-10 flex-grow">

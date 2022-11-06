@@ -26,8 +26,8 @@ export default function SignIn(){
                 alertMessageAnimation.start({
                     opacity:1,
                     display:"block",
-                    borderColor:"#23dd23",
-                    color:"#23dd23"
+                    borderColor:"#23ff23",
+                    color:"#23ff23"
                 }).then(() => {
                     window.location.href = "/";
                 });
@@ -36,8 +36,8 @@ export default function SignIn(){
                 alertMessageAnimation.start({
                     opacity:1,
                     display:"block",
-                    borderColor:"#ff3a3a",
-                    color:"#ff3a3a"
+                    borderColor:"#ff2222",
+                    color:"#ff2222"
                 }).then(() => {
 
                 });
@@ -71,7 +71,7 @@ export default function SignIn(){
                     </div>
                     <div className={styles.form_header}>or with:</div>
                     <div className={styles.form}>
-                        <motion.div animate={alertMessageAnimation} className="border-l-2 opacity-0 bg-[#e9e9e9] hidden rounded font-bold text-base w-2/3 my-4 py-2 px-4">{alertMessage}</motion.div>
+                        <motion.div animate={alertMessageAnimation} className="border-l-2 opacity-0 bg-[#efefef] hidden rounded font-semibold text-base w-2/3 my-4 py-2 px-4">{alertMessage}</motion.div>
                         <Input type="text" value_state={[username,setUsername]} placeholder="username" />
                         <Input type="password" value_state={[password,setPassword]} placeholder="password" />
                     </div>
