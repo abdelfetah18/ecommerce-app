@@ -92,7 +92,7 @@ export default function MyOrders({ user, orders, theme, setTheme }){
 
 
     return(
-        <div className="flex flex-col items-center w-screen dark:bg-[#252936]">
+        <div className="flex flex-col items-center w-full dark:bg-[#252936]">
             <Header user={{ profile_image: null }} theme={theme} setTheme={setTheme} />
             <div className="w-10/12 shadow-xl h-screen bg-gray-50 flex flex-row dark:bg-[#2c3040]">
                 <SideBar key={"SideBar"} user={user} />

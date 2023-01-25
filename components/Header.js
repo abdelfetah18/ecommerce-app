@@ -165,7 +165,7 @@ export default function Header({ user, theme, setTheme }) {
 const styles = {
     container:"flex flex-row w-11/12 py-4 items-center bg-white dark:bg-[#2c3040] dark:border-[#252936] border-slate-50 border-b-2 rounded-b-xl shadow",
     navigation_wrpper:"flex flex-row w-1/3 items-center pl-5",
-    navigation_text: "text-[#616161] dark:text-[#cbcbcd] text-sm font-bold text-base mx-2 cursor-pointer duration-300 ease-linear hover:text-red-500",
+    navigation_text: "text-[#616161] dark:text-[#cbcbcd] text-sm font-bold text-base ml-4 cursor-pointer duration-300 ease-linear hover:text-red-500",
     logo_wrapper:"flex flex-row w-1/3 items-center justify-center",
     logo:"font-bold text-xl text-center dark:text-white",
     icons_wrapper:"flex flex-row w-1/3 items-center justify-end pr-5",
