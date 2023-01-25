@@ -19,6 +19,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 1. manage orders,products. (create,edit,delete,update).
 2. statistics about revenue,and how many clients you have and some statics about every client. 
+3. themes (dark/light mode).
 
 ## Technology used in this app
 
@@ -239,15 +240,12 @@ to make make the project more easy to design, i used TailWind which is a CSS Fra
 
 
 ## Images from the app
-![1](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/1.png)
+![home](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/home.png)
+![dark-mode-home](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-home.png)
 ![2](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/2.png)
-![3](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/3.png)
-![4](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/4.png)
-![5](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/5.png)
-![6](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/6.png)
+![dark-mode-check_out](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-check_out.png)
 ![7](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/7.png)
-![8](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/8.png)
-
+![dark-mode-my_profile](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-my_profile.png)
 ---
 
 ## Admin Dashboard:
