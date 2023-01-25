@@ -23,6 +23,6 @@ export default function Categories({ category_name,categories }){
 
 const styles = {
     container:"flex flex-row items-center justify-center w-full",
-    cat_wrapper:"flex flex-row items-center justify-center bg-white dark:bg-[#2c3040] dark:border-none dark:rounded-b-lg w-5/6 py-2 border-b-2 border-r-2 border-l-2",
+    cat_wrapper:"flex flex-row items-center justify-center bg-white dark:bg-[#2c3040] dark:border-none rounded-b-lg w-5/6 py-2 shadow",
     cat:"mx-2 font-semibold  cursor-pointer hover:text-[#000000dd] "
 }
