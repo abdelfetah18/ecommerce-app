@@ -18,7 +18,7 @@ export async function getServerSideProps({ req }){
     }
 }
 
-export default function CheckOut({ user }){
+export default function CheckOut({ user, theme, setTheme }){
     var [shopping_cart,setShoppingCart] = useState([]);
     var [total_price,setTotalPrice] = useState(0);
     var [check_out_open,setCheckOutOpen] = useState(false);
@@ -134,7 +134,7 @@ export default function CheckOut({ user }){
 
     return(
         <div className={styles.container}>
-            <Header user={user} />
+            <Header user={user} theme={theme} setTheme={setTheme} />
             <div className={styles.wrapper}>
                 <div className={styles.products_wrapper}>
                     {
@@ -178,12 +178,12 @@ export default function CheckOut({ user }){
                 </div>
             </div>
             <motion.div animate={checkoutDialog} className="absolute opacity-0 flex flex-col items-center justify-center top-[-100vh] left-0 w-screen h-screen bg-[#00000099]">
-                <div className="bg-white w-1/2 rounded-lg flex flex-col items-center">
+                <div className="bg-white w-1/2 rounded-lg flex flex-col items-center dark:bg-[#252936]">
                     <div className="flex flex-row w-full items-center px-3 py-1 justify-between">
-                        <div className="font-bold text-xl">Payment methods:</div>
-                        <FaTimes onClick={toggleCheckOutDialog} className="text-lg cursor-pointer" />
+                        <div className="font-bold text-xl dark:text-[#cbcbcb]">Payment methods:</div>
+                        <FaTimes onClick={toggleCheckOutDialog} className="text-lg cursor-pointer dark:text-[#cbcbcb]" />
                     </div>
-                    <div className="font-semibold text-base">Pay with:</div>
+                    <div className="font-semibold text-base dark:text-[#cbcbcb]">Pay with:</div>
                     <div className="my-2">
                         <PayPalButtons forceReRender={[total_price,shopping_cart]} onCancel={onCancel} onError={onError} onApprove={onApprove} createOrder={createOrder} />
                     </div>
@@ -194,20 +194,20 @@ export default function CheckOut({ user }){
 }
 
 const styles = {
-    container:"w-screen flex flex-col items-center bg-gray-50",
+    container:"w-screen h-screen flex flex-col items-center bg-gray-50 dark:bg-[#252936]",
     wrapper:"w-5/6 flex flex-col items-center",
-    products_wrapper:"w-11/12 flex flex-col items-center py-5",
-    product_wrapper:"w-1/2 flex flex-row items-center mx-5 my-1 rounded-lg bg-gray-200",
+    products_wrapper:"w-11/12 flex flex-col items-center py-5 ",
+    product_wrapper:"w-1/2 flex flex-row items-center mx-5 my-1 rounded-lg bg-gray-200 dark:bg-[#2c3040]",
     p_image_wrapper:"w-20 h-20 rounded-lg flex flex-col items-center",
     p_image:'h-full rounded-lg shadow-lg',
     p_info_wrapper:"w-5/6 flex flex-col",
-    p_name:"font-semibold text-lg mx-2",
+    p_name:"font-semibold text-lg mx-2 dark:text-[#eee]",
     p_category:"font-medium text-sm text-[#bebeba] mx-2",
-    p_price:"font-semibold mx-2",
+    p_price:"font-semibold mx-2 dark:text-[#eee]",
     p_actions_wrapper:"w-1/12 flex flex-col items-center",
-    p_remove_wrapper:"p-2 bg-black rounded-lg cursor-pointer",
+    p_remove_wrapper:"p-2 bg-black rounded-lg cursor-pointer dark:bg-[#252936]",
     p_remove:"text-white text-lg",
     p_check_out_wrapper:"w-1/2 flex flex-row items-center justify-between",
-    p_total_price:"font-bold text-lg",
+    p_total_price:"font-bold text-lg dark:text-[#cbcbcb]",
     p_check_out:"bg-blue-500 px-4 py-1 rounded-lg cursor-pointer font-bold text-[#eeeeee] my-5"
 }

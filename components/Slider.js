@@ -27,7 +27,7 @@ export default function Slider({ images }){
 
     return(
         <div className="relative w-11/12 flex flex-col items-center justify-center my-2">
-            <div ref={slider} className="w-full max-h-72 bg-slate-500 flex flex-row items-center overflow-hidden rounded-lg">
+            <div ref={slider} className="w-full max-h-72 bg-slate-500 dark:bg-[#252936] flex flex-row items-center overflow-hidden rounded-lg">
                 {
                     images.map((img,index) => {
                         return(
@@ -39,10 +39,10 @@ export default function Slider({ images }){
                 }
             </div>
             <div className="absolute w-full flex flex-row items-center justify-between">
-                <div onClick={prev} className="bg-[#000000] rounded-lg p-2 cursor-pointer">
+                <div onClick={prev} className="bg-[#000000] dark:bg-[#2c3040] dark:border-2 dark:border-[#252936] rounded-lg p-2 cursor-pointer">
                     <FaAngleLeft className="text-lg text-[#ebebea]"/>
                 </div>
-                <div onClick={next} className="bg-[#000000] rounded-lg p-2 cursor-pointer">
+                <div onClick={next} className="bg-[#000000] dark:bg-[#2c3040] dark:border-2 dark:border-[#252936] rounded-lg p-2 cursor-pointer">
                     <FaAngleRight className="text-lg text-[#ebebea]"/>
                 </div>
             </div>

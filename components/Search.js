@@ -41,10 +41,10 @@ export default function Search({ categories,search }){
 }
 
 const styles = {
-    container:"w-1/5 flex flex-col items-center bg-white shadow-xl py-4 h-full rounded-t-lg",
-    search_wrapper:"w-11/12 flex flex-row items-center rounded-lg bg-gray-100 ",
+    container:"w-1/5 flex flex-col items-center bg-white dark:bg-[#2c3040] shadow-xl py-4 h-full rounded-t-lg",
+    search_wrapper:"w-11/12 flex flex-row items-center rounded-lg bg-gray-100 dark:bg-[#252936]",
     search_icon:"w-1/6 h-8 py-2 text-[#909090]",
-    search_input:"text-base font-medium w-5/6 px-2 bg-gray-100 rounded-xl text-[#616161]",
+    search_input:"text-base font-medium w-5/6 px-2 bg-gray-100 rounded-xl text-[#616161] dark:bg-[#252936]",
     wrapper:"w-5/6 flex flex-col items-center my-5",
     div_wrapper:"w-full flex flex-col items-center",
     div_header:"cursor-pointer text-base font-semibold w-full flex flex-row justify-between items-center px-2 py-1",

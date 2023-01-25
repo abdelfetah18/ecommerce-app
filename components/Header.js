@@ -1,9 +1,9 @@
-import { FaShoppingCart,FaUserCircle,FaCog, FaTimes } from "react-icons/fa";
+import { FaShoppingCart,FaUserCircle,FaCog, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import { motion,useAnimation } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function Header({ user }) {
+export default function Header({ user, theme, setTheme }) {
     var shopping_cart_animation = useAnimation();
     var settingsAnimation = useAnimation();
     var [settings_open,setSettingsOpen] = useState(false);
@@ -85,6 +85,9 @@ export default function Header({ user }) {
             </Link>
         </div>
         <div className={styles.icons_wrapper}>
+            <div className="mx-4 cursor-pointer">
+                { theme != "light" ? <FaSun className="text-white" onClick={() => setTheme("light")} /> : <FaMoon className="text-[#2c3040]" onClick={() => setTheme("dark")} /> } 
+            </div>
             <Link href="/check_out">
                 <div className={styles.check_out}>check out</div>
             </Link>
@@ -95,7 +98,7 @@ export default function Header({ user }) {
                         <FaShoppingCart className={styles.shopping_cart_header_icon}/>
                         <div className={styles.shopping_cart_header_title}>My Cart:</div>
                     </div>
-                    { shopping_cart_items.length == 0 && (<div className="py-1 text-base">Empty</div>)}
+                    { shopping_cart_items.length == 0 && (<div className="py-1 text-base dark:text-[#cbcbcd]">Empty</div>)}
                     {
                         shopping_cart_items.map((item,index) => {
                             function removeItem(){
@@ -139,19 +142,19 @@ export default function Header({ user }) {
             */}
             <div className={styles.icon_wrapper} >
                 <FaCog onClick={toggleSettings} className={styles.icon} />
-                <motion.div animate={settingsAnimation} className="absolute right-8 top-8 hidden opacity-0 flex-col items-center py-2 w-60 bg-gray-100 shadow-xl">
+                <motion.div animate={settingsAnimation} className="absolute right-8 top-8 hidden opacity-0 flex-col items-center py-2 w-60 bg-gray-100 dark:bg-[#2c3040] dark:rounded-lg dark:border-2 dark:border-[#252936] shadow-xl">
                     <Link href={"/my_profile/my_orders"}>
-                        <div className="flex flex-row my-1 w-11/12 items-center ease-linear duration-300 cursor-pointer hover:bg-gray-200 p-2">
+                        <div className="flex flex-row my-1 w-11/12 items-center ease-linear duration-300 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 dark:rounded-lg p-2">
                             <div className="w-10 flex flex-col items-center">
                                 <img className="h-10 w-10 rounded-full bg-white" src={user.profile_image ? user.profile_image : "https://cdn.sanity.io/images/a6hagb75/production/fb17726fe38ca05bb9d8ac35b1dd3ad11ea4dbbf-752x748.jpg" } />
                             </div>
                             <div className="w-5/6 flex flex-col items-center">
-                                <div className="text-sm font-medium w-11/12">{user.username}</div>
+                                <div className="text-sm font-medium w-11/12 dark:text-[#cbcbcd]">{user.username}</div>
                                 <div className="text-xs text-gray-400 w-5/6">view profile</div>
                             </div>
                         </div>
                     </Link>
-                    <Link href={"/user/sign_out"}><div className="mt-4 w-11/12 text-center font-semibold py-1 cursor-pointer ease-linear duration-300 bg-gray-200 hover:bg-gray-300">sign out</div></Link>
+                    <Link href={"/user/sign_out"}><div className="mt-4 w-11/12 text-center font-semibold py-1 cursor-pointer ease-linear duration-300 bg-gray-200 dark:bg-[#252936] dark:text-[#cbcbcd] dark:rounded-lg hover:bg-gray-300">sign out</div></Link>
                 </motion.div>
             </div>
         </div>
@@ -160,27 +163,27 @@ export default function Header({ user }) {
 }
 
 const styles = {
-    container:"flex felx-row w-11/12 py-4 items-center border-b-2 border-r-2 border-l-2 bg-white",
+    container:"flex felx-row w-11/12 py-4 items-center border-b-2 border-r-2 border-l-2 bg-white dark:bg-[#2c3040] dark:border-[#252936] dark:rounded-b-xl",
     navigation_wrpper:"flex flex-row w-1/3 items-center pl-5",
-    navigation_text: "text-[#616161] text-sm font-bold text-base mx-2 cursor-pointer duration-300 ease-linear hover:text-red-500",
+    navigation_text: "text-[#616161] dark:text-[#cbcbcd] text-sm font-bold text-base mx-2 cursor-pointer duration-300 ease-linear hover:text-red-500",
     logo_wrapper:"flex flex-row w-1/3 items-center justify-center",
-    logo:"font-bold text-xl text-center",
+    logo:"font-bold text-xl text-center dark:text-white",
     icons_wrapper:"flex flex-row w-1/3 items-center justify-end pr-5",
     icon_wrapper:"relative",
-    icon:"text-[#616161] text-base mx-4 text-2xl cursor-pointer hover:text-gray-200",
-    shopping_cart_wrapper:"w-80 absolute right-5 top-5 bg-[#fff] shadow-xl hidden opacity-0 flex-col items-center border-[1px]",
-    shopping_cart_item_wrapper:"w-full  flex flex-row items-center my-px",
+    icon:"text-[#616161] dark:text-[#cbcbcd] text-base mx-4 text-2xl cursor-pointer hover:text-gray-200",
+    shopping_cart_wrapper:"w-96 absolute right-5 top-5 bg-[#fff] shadow-xl hidden opacity-0 flex-col items-center border-[1px] dark:bg-[#2c3040] dark:rounded-lg dark:border-2 dark:border-[#252936]",
+    shopping_cart_item_wrapper:"w-full flex flex-row items-center my-px",
     shopping_cart_item_image_wrapper:"p-2 w-16 h-16 rounded-lg",
     shopping_cart_item_image:"w-full h-full rounded-lg",
-    shopping_cart_item_info_container:"flex flex-col w-1/2",
-    shopping_cart_item_info_wrapper:"flex flex-row items-center",
-    shopping_cart_item_info_product_name:"text-base font-semibold  mx-1",
-    shopping_cart_item_info_product_category:"text-xs font-medium text-[#bdbdba] mx-1",
-    shopping_cart_item_info_product_price:"font-bold",
-    shopping_cart_item_remove_wrapper:"w-1/6 flex flex-col items-center justify-center cursor-pointer p-2 bg-[#000000] ml-4",
+    shopping_cart_item_info_container:"flex flex-col flex-grow",
+    shopping_cart_item_info_wrapper:"flex flex-row items-center justify-between",
+    shopping_cart_item_info_product_name:"text-base font-semibold  dark:text-[#cbcbcd]",
+    shopping_cart_item_info_product_category:"text-xs font-medium text-[#bdbdba]",
+    shopping_cart_item_info_product_price:"font-bold dark:text-[#cbcbcd]",
+    shopping_cart_item_remove_wrapper:"mx-2 flex flex-col items-center justify-center cursor-pointer p-2 bg-[#000000] dark:bg-[#252936] dark:rounded ml-4",
     shopping_cart_item_remove:"text-lg text-[#ffffff]",
-    shopping_cart_header_wrapper:"w-full border-b-[1px] flex flex-row items-center p-2 bg-gray-50 shadow",
-    shopping_cart_header_icon:"text-lg text-[#020202] mx-1",
-    shopping_cart_header_title:"text-base font-semibold text-[#]",
-    check_out:"duration-300 ease-linear font-semibold mx-2 cursor-pointer text-blue-500 border-blue-500   border-2 px-2 rounded-full hover:text-black hover:border-black"
+    shopping_cart_header_wrapper:"w-full border-b-[1px] flex flex-row items-center p-2 bg-gray-50 shadow dark:bg-[#252936] border-[#2c3040]",
+    shopping_cart_header_icon:"text-lg text-[#020202] mx-1 dark:text-[#cbcbcd]",
+    shopping_cart_header_title:"text-base font-semibold text-[#] dark:text-[#cbcbcd]",
+    check_out:"duration-300 ease-linear font-semibold dark:font-bold dark:uppercase dark:text-sm mx-2 cursor-pointer text-blue-500 dark:text-blue-100 border-blue-500 dark:border-blue-100 border-2 px-2 rounded-full hover:text-black hover:border-black"
 }

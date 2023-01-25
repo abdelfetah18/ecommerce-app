@@ -29,12 +29,12 @@ export async function getServerSideProps({ req,params }){
   }
 }
 
-export default function Home({ products,category_name,categories,user }) {
+export default function Home({ products,category_name,categories,user, theme, setTheme }) {
   var [_products,setProducts] = useState(products);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center">
-      <Header user={user} />
+    <div className="w-screen h-screen flex flex-col items-center overflow-auto bg-slate-50 dark:bg-[#252936]">
+      <Header user={user} theme={theme} setTheme={setTheme} />
       <Categories category_name={category_name} categories={categories} />
       <div className="flex flex-row w-11/12 mt-10 flex-grow">
         <Search search={[_products,setProducts]} categories={categories} />

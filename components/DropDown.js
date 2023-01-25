@@ -56,7 +56,7 @@ export default function DropDown({ header,items }){
 
 const styles = {
     div_wrapper:"w-full flex flex-col items-center",
-    div_header:"cursor-pointer text-base font-semibold w-full flex flex-row justify-between items-center px-2 py-1",
+    div_header:"cursor-pointer text-base font-semibold w-full flex flex-row justify-between items-center px-2 py-1 dark:text-[#cbcbcd]",
     div_body_wrapper:"hidden opacity-0 flex flex-col w-5/6 origin-top",
-    div_body_item:"text-sm font-medium"
+    div_body_item:"text-sm font-medium dark:text-[#cbcbcd]"
 }
