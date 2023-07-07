@@ -78,7 +78,7 @@ const Item = ({ item, selected, setSelected }) => {
         setSelected(state => state == item ? null : item);
     }
 
-    return <motion.div onClick={onClick} className={styles.div_body_item+(selected == item ? " bg-[#363b50]" : "")}>{item.name || item}</motion.div>
+    return <motion.div onClick={onClick} className={styles.div_body_item+(selected == item ? " dark:bg-[#363b50] bg-[#eee]" : "")}>{item.name || item}</motion.div>
 }
 
 const styles = {
