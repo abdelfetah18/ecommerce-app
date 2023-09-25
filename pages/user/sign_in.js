@@ -70,15 +70,15 @@ export default function Signin(){
                         <input value={username} onChange={(evt) => { setUsername(evt.target.value); }} className="w-1/2 bg-gray-100 px-3 py-2 rounded-lg my-1" placeholder="Username" type="text" />
                         <input value={password} onKeyDown={(evt) => { if(evt.key === "Enter"){ sign_in(evt); }}} onChange={(evt) => { setPassword(evt.target.value); }} className="w-1/2 bg-gray-100 px-3 py-2 rounded-lg my-1" placeholder="Password" type="password" />
                     </div>
-                    <div onClick={sign_in} className="cursor-pointer px-6 py-2 rounded-lg bg-gray-900 text-white font-bold">Sign in</div>
+                    <div onClick={sign_in} className="cursor-pointer px-6 py-2 rounded-lg bg-gray-900 text-white font-bold">SIGN IN</div>
                 </div>
             </div>
             <div className="w-1/3 h-screen flex flex-col items-center justify-center bg-gray-900">
-                <div className="text-white text-5xl text-base font-bold" >New Here ?</div>
+                <div className="text-white text-5xl font-bold" >New Here ?</div>
                 <div className="text-white text-2xl w-2/3 text-center my-4">
                     {"Sign up and discover a great amount of new opportunities!"}
                 </div>
-                <a href="./sign_up" className="cursor-pointer px-6 py-2 rounded-lg bg-white text-black font-bold">Sign up</a>
+                <a href="./sign_up" className="cursor-pointer px-6 py-2 rounded-lg bg-white text-black font-bold">SIGN UP</a>
             </div>
         </div>
     )

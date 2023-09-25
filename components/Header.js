@@ -96,7 +96,7 @@ export default function Header({ user, theme, setTheme }) {
                 <motion.div animate={shopping_cart_animation} className={styles.shopping_cart_wrapper}>
                     <div className={styles.shopping_cart_header_wrapper}>
                         <FaShoppingCart className={styles.shopping_cart_header_icon}/>
-                        <div className={styles.shopping_cart_header_title}>My Cart:</div>
+                        <div className={styles.shopping_cart_header_title}>MY CART:</div>
                     </div>
                     { shopping_cart_items.length == 0 && (<div className="py-1 text-base dark:text-[#cbcbcd]">Empty</div>)}
                     {
@@ -182,7 +182,7 @@ const styles = {
     shopping_cart_item_info_product_price:"font-bold dark:text-[#cbcbcd]",
     shopping_cart_item_remove_wrapper:"mx-2 flex flex-col items-center justify-center cursor-pointer p-2 bg-[#000000] dark:bg-[#252936] rounded ml-4",
     shopping_cart_item_remove:"text-lg text-[#ffffff]",
-    shopping_cart_header_wrapper:"w-full border-b-[1px] flex flex-row items-center p-2 bg-gray-50 shadow dark:bg-[#252936] border-[#2c3040]",
+    shopping_cart_header_wrapper:"w-full flex flex-row items-center p-2 bg-gray-50 shadow dark:bg-[#252936]",
     shopping_cart_header_icon:"text-lg text-[#020202] mx-1 dark:text-[#cbcbcd]",
     shopping_cart_header_title:"text-base font-semibold text-[#] dark:text-[#cbcbcd]",
     check_out:"duration-300 ease-linear font-bold uppercase text-sm mx-2 cursor-pointer text-blue-500 dark:text-blue-100 border-blue-500 dark:border-blue-100 border-2 px-2 rounded-full hover:text-black hover:border-black"

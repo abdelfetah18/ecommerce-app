@@ -88,17 +88,17 @@ export default function Shop({ products,category_name }){
             </div>
             <motion.div animate={product_animation} className="hidden opacity-0 flex-col items-center justify-center absolute top-0 left-0 w-screen h-screen bg-[#00000099]">
                 <div className="w-1/2 rounded-lg bg-white dark:bg-[#2c3040] shadow-xl flex flex-col items-center">
-                    <div className="w-full px-2 flex flex-orw items-center justify-between">
-                        <div className="text-lg font-semibold dark:text-[#cbcbcd]">Product:</div>
-                        <FaTimes onClick={toggleProduct} className="text-lg cursor-pointer dark:text-[#cbcbcd]" />
+                    <div className="w-full px-4 py-2 flex flex-orw items-center justify-between">
+                        <div className="text-lg font-semibold dark:text-[#cbcbcd] text-gray-700">Product:</div>
+                        <FaTimes onClick={toggleProduct} className="text-lg cursor-pointer dark:text-[#cbcbcd] text-gray-700" />
                     </div>
                     <Slider images={selected_product.images}/>
-                    <div className="w-11/12 flex flex-col items-center">
-                        <div className="w-full font-semibold text-lg dark:text-[#fff]">{selected_product.name}</div>
-                        <div className="w-full font-medium text-sm text-[#9a9a9b] dark:text-[#cbcbcd99]">{selected_product.category.name}</div>
-                        <div className="w-full font-semibold text-lg dark:text-[#cbcbcd]">${selected_product.price.value}</div>
+                    <div className="w-11/12 flex flex-col items-center my-8">
+                        <div className="w-full font-bold text-xl dark:text-[#fff]">{selected_product.name}</div>
+                        <div className="w-full font-medium text-xs text-gray-400 dark:text-[#cbcbcd99] uppercase py-4">{selected_product.category.name}</div>
+                        <div className="w-full font-semibold text-lg text-green-600">${selected_product.price.value}</div>
                     </div>
-                    <div onClick={addToCart} className="bg-blue-500 rounded-lg px-4 py-1 font-semibold text-white cursor-pointer my-4">Add to Cart</div>
+                    <div onClick={addToCart} className="bg-blue-500 rounded-lg px-8 py-2 text-sm font-semibold text-white cursor-pointer my-4">ADD TO CART</div>
                 </div>
             </motion.div>
         </div>
@@ -112,10 +112,10 @@ const styles = {
     category:"text-sm font-semibold px-2 cursor-pointer dark:text-[#fff] dark:font-bold",
     products_wrapper:"w-full flex flex-row flex-wrap mt-4",
     product_container:"flex flex-col w-1/4 my-4 items-center ",
-    product_wrapper:"rounded flex flex-col w-11/12 items-center cursor-pointer hover:px-1  transition-linear duration-300 hover:shadow-xl",
+    product_wrapper:"rounded-md bg-gray-100 dark:bg-gray-700 flex flex-col w-11/12 items-center cursor-pointer hover:px-1  transition-linear duration-300 hover:shadow-xl",
     image_wrapper:"w-full rounded bg-gray-200 flex flex-col items-center",
     image:"h-52 object-contain rounded",
-    name:"w-full font-semibold text-lg w-11/12 py-2 dark:text-[#cbcbcd]",
-    p_category:"w-full font-semibold text-gray-600 text-sm w-11/12 py-2 dark:text-[#cbcbcd99]",
-    price:"w-full font-semibold text-sm py-2 w-11/12  dark:text-[#cbcbcd] dark:font-bold"
+    name:"w-full font-semibold text-lg w-11/12 pt-4 pb-1 dark:text-[#cbcbcd]",
+    p_category:"w-full uppercase text-gray-400 text-xs w-11/12 py-1 dark:text-[#cbcbcd99]",
+    price:"w-full text-green-600 font-semibold text-sm pt-1 pb-4 w-11/12  dark:font-bold"
 };

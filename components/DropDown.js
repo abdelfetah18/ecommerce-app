@@ -78,12 +78,12 @@ const Item = ({ item, selected, setSelected }) => {
         setSelected(state => state == item ? null : item);
     }
 
-    return <motion.div onClick={onClick} className={styles.div_body_item+(selected == item ? " dark:bg-[#363b50] bg-[#eee]" : "")}>{item.name || item}</motion.div>
+    return <motion.div onClick={onClick} className={styles.div_body_item+(selected == item ? " dark:bg-[#363b50] bg-gray-100" : "")}>{item.name || item}</motion.div>
 }
 
 const styles = {
     div_wrapper:"w-full flex flex-col items-center",
     div_header:"cursor-pointer text-base font-semibold w-full flex flex-row justify-between items-center py-1 dark:text-[#cbcbcd]",
     div_body_wrapper:"flex flex-col w-full origin-top overflow-hidden h-0",
-    div_body_item:"text-sm font-normal dark:text-[#cbcbcd] px-4 py-2 cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-800 rounded-md duration-300"
+    div_body_item:"text-xs uppercase text-gray-600 font-medium dark:text-[#cbcbcd] px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md duration-300"
 }
