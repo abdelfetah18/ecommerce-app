@@ -2,21 +2,17 @@ import Categories from "../components/Categories";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import Shop from "../components/Shop";
-import { getData } from "../database/client";
+import { getCategories, getProducts, getUser } from "../database/client";
 import { decodeJwt } from "jose";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export async function getServerSideProps({ req }){
-  var user = decodeJwt(req.cookies.access_token);
-  var products = await getData('*[_type=="products"]{_id,name,"images":images[]{"url":asset->url},"category":*[_type=="categories" && @._id==^.category._ref][0],description,"price":*[_type=="prices" && @._id==^.price._ref][0]}',{});
-  var categories = await getData('*[ _type=="categories"]{_id,name,icon }');
-  var user_info = await getData('*[_type=="users" && _id==$user_id]{_id,username,email,"profile_image":profile_image.asset->url}',{ user_id:user.user_id});
+  const user_session = decodeJwt(req.cookies.access_token);
+  const products = await getProducts();
+  const categories = await getCategories();
+  const user = await getUser(user_session.user_id);
 
-  return {
-    props:{
-      products,categories,user:user_info[0]
-    }
-  }
+  return { props: { products, categories, user } };
 }
 
 export default function Home({ products, categories, user, theme, setTheme }) {

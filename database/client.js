@@ -15,10 +15,40 @@ client.delete({
 }).then((res) => console.log('deleted all:',res))
 */
 
-
-
 import { basename } from 'path';
 import { createReadStream } from 'fs';
+
+// QUERY_PROPS
+const user_props = `{ _id, username, email, "profile_image" : profile_image.asset->url }`;
+const product_props = `{ _id, name, "images": images[]{ "url" : asset->url }, category-> , description, price-> }`;
+const category_props = `{ _id, name, icon }`;
+const price_props = `{ _id, value, currency }`;
+const order_props = `{ _id, state, products[]->${product_props}, payment_method, _createdAt }`;
+
+async function getUser(user_id){
+  const query = `*[_type=="users" && _id==$user_id]${user_props}[0]`;
+  return await client.fetch(query, { user_id });
+}
+
+async function getProducts(){
+  const query = `*[_type=="products"]${product_props}`;
+  return await client.fetch(query);
+}
+
+async function getCategories(){
+  const query = `*[_type=="categories"]${category_props}`;
+  return await client.fetch(query);
+}
+
+async function getUserOrdersByState(user_id, state){
+  const query = `*[_type=="orders" && user._ref == $user_id && state == $state]${order_props}`;
+  return await client.fetch(query, { user_id, state });
+}
+
+async function getUserOrders(user_id){
+  const query = `*[_type=="orders" && user._ref == $user_id]${order_props}`;
+  return await client.fetch(query, { user_id });
+}
 
 async function getData(query,params){
   return await client.fetch(query, params);
@@ -79,5 +109,6 @@ async function newOrder(user_id,total){
 }
 
 export {
+  getUser, getProducts, getCategories, getUserOrdersByState, getUserOrders,
   updateData,getData,addData,uploadProfile,uploadImage,deleteOrders,newOrder
 };

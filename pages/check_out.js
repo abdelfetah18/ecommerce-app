@@ -5,16 +5,14 @@ import Header from "../components/Header";
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
 import { decodeJwt } from "jose";
-import { getData } from "../database/client";
+import { getUser } from "../database/client";
 
 export async function getServerSideProps({ req }){
-    var user = decodeJwt(req.cookies.access_token);
-    var user_info = await getData('*[_type=="users" && _id==$user_id]{_id,username,email,"profile_image":profile_image.asset->url}',{ user_id:user.user_id});
-  
+    const user_session = decodeJwt(req.cookies.access_token);
+    const user = await getUser(user_session.user_id);
+    
     return {
-      props:{
-        user:user_info[0]
-      }
+      props:{ user }
     }
 }
 
