@@ -39,18 +39,18 @@ export default function ProductDialogue({ product, product_dialog_open, setDialo
             var items = JSON.parse(myCart);
             var found = false;
             for(var i=0;i<items.length;i++){
-                if(items[i]._id === selected_product._id){
+                if(items[i]._id === product._id){
                     found = true;
                 }
             }
             if(found){
                 alert("already added!");
             }else{
-                localStorage.setItem("myCart",JSON.stringify([...items,selected_product]));
+                localStorage.setItem("myCart",JSON.stringify([...items,product]));
                 closeDialogue();
             }
         }else{
-            localStorage.setItem("myCart",JSON.stringify([selected_product]));
+            localStorage.setItem("myCart",JSON.stringify([product]));
             closeDialogue();
         }
     }
