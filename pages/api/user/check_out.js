@@ -1,6 +1,6 @@
 import PayPal from "@paypal/checkout-server-sdk";
 import { decodeJwt } from "jose";
-import { addData, getData, newOrder, updateData } from "../../../database/client";
+import { addData, getData, newOrder } from "../../../database/client";
 
 let environment = new PayPal.core.SandboxEnvironment("AXa9T1IwDDwKYKXiOWnk2JkftTWo025ISE4SmhSpug3cNcuShrvI16vrNqdh6gnP4AGK72YuLwvOGE7-", "EEtIzmpjrQpuxZNCZ0wp4XPlTNsp4PVudwEmQoIZDpddp-z1zBtm_paDtysKe3BpGl3G3wBNITOisgeu");
 let client = new PayPal.core.PayPalHttpClient(environment);
@@ -13,9 +13,8 @@ export default async function handler(req, res) {
         for(var i=0;i<data.shopping_cart.length;i++){
             items.push(data.shopping_cart[i]._id);
         }
-        //if success execute payment else return error
 
-        
+        //if success execute payment else return error
         getData('*[_type=="products" && _id in $items]{ _id,"price":price->value }',{ items }).then((result) => {
             //check for the total
             var total = 0;

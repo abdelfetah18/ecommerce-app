@@ -3,22 +3,18 @@ import Categories from "../../components/Categories";
 import Header from "../../components/Header";
 import Search from "../../components/Search";
 import Shop from "../../components/Shop";
-import { getData } from "../../database/client";
+import { getCategories, getProductsByCategory, getUser } from "../../database/client";
 import { decodeJwt } from "jose";
 
 export async function getServerSideProps({ req,params }){
-  var category_name = params.category;
+  let category_name = params.category;
   if(req.cookies.access_token != undefined){
-    var user = decodeJwt(req.cookies.access_token);
-    var products = await getData('*[_type=="products" && category->name==$category_name]{_id,name,"images":images[]{"url":asset->url},"category":*[_type=="categories" && @._id==^.category._ref][0],description,"price":*[_type=="prices" && @._id==^.price._ref][0]}',{ category_name });
-    var categories = await getData('*[ _type=="categories"]{_id,name,icon }');
-    var user_info = await getData('*[_type=="users" && _id==$user_id]{_id,username,email,"profile_image":profile_image.asset->url}',{ user_id:user.user_id});
-
-    return {
-      props:{
-        products,category_name,categories,user:user_info[0]
-      }
-    }
+    let user_session = decodeJwt(req.cookies.access_token);
+    let products = await getProductsByCategory(category_name);
+    let categories = await getCategories();
+    let user = await getUser(user_session.user_id);
+    
+    return { props:{ products, category_name, categories, user }};
   }else{
     return {
       redirect: {

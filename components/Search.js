@@ -4,7 +4,7 @@ import DropDown from "./DropDown";
 import axios from "axios";
 
 export default function Search({ categories, search }){
-    const [products,setProducts] = search;
+    const [products, setProducts] = search;
     const [query,setQuery] = useState('');
     const [filters, setFilters] = useState({});
 
@@ -22,7 +22,9 @@ export default function Search({ categories, search }){
     }
 
     useEffect(() => {
-        searchFor();
+        if(query.length > 0){
+            searchFor();
+        }
     },[query, filters]);
 
     return(

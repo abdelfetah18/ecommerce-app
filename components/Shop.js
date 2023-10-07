@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Products from "./Products";
 
-export default function Shop({ products,category_name }){
+export default function Shop({ products, category_name }){
     return(
         <div className={styles.container}>
             <div className={styles.nav_wrapper}>
