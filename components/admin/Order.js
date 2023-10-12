@@ -42,7 +42,7 @@ export default function Order({ order }){
             states_animation.start({
                 opacity:0,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 states_animation.set({ display:"none" })
@@ -53,7 +53,7 @@ export default function Order({ order }){
                 display:"flex",
                 opacity:1,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 setChangeStateOpen(true);

@@ -16,14 +16,14 @@ export default function ProductDialogue({ product, product_dialog_open, setDialo
                 display:"flex",
                 opacity:1,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             });
         }else{
             product_animation.start({
                 opacity:0,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 product_animation.set({

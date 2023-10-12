@@ -35,7 +35,7 @@ export default function Products({ products,categories,category }){
                     display:"block",
                     opacity:1,
                     transition:{
-                        delay:0.3
+                        duration:0.3
                     }
                 }).then(() => {
                     window.location.reload();
@@ -54,7 +54,7 @@ export default function Products({ products,categories,category }){
                     display:"block",
                     opacity:1,
                     transition:{
-                        delay:0.3
+                        duration:0.3
                     }
                 }).then(() => {
                     window.location.reload();
@@ -73,7 +73,7 @@ export default function Products({ products,categories,category }){
                     display:"block",
                     opacity:1,
                     transition:{
-                        delay:0.3
+                        duration:0.3
                     }
                 }).then(() => {
                     window.location.reload();
@@ -121,7 +121,7 @@ export default function Products({ products,categories,category }){
             new_product_dialog_animation.start({
                 opacity:0,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 new_product_dialog_animation.set({
@@ -134,7 +134,7 @@ export default function Products({ products,categories,category }){
                 display:"flex",
                 opacity:1,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 setDialogOpen(true);
@@ -147,7 +147,7 @@ export default function Products({ products,categories,category }){
             new_category_animation.start({
                 opacity:0,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 new_category_animation.set({
@@ -160,7 +160,7 @@ export default function Products({ products,categories,category }){
                 opacity:1,
                 display:"flex",
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 setNewCDOpen(true);

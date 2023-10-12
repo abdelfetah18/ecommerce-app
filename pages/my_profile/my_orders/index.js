@@ -63,14 +63,14 @@ function OrderDetails({ order, useOrderDialogueOpen }){
                 display:"flex",
                 opacity:1,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             });
         }else{
             order_animation.start({
                 opacity:0,
                 transition:{
-                    delay:0.3
+                    duration:0.3
                 }
             }).then(() => {
                 order_animation.set({
