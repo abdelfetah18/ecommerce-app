@@ -8,8 +8,8 @@ import { IoMdMore } from "react-icons/io";
 
 
 export default function Orders({ orders }){
-    var search_input = useAnimation();
-    var search_open = false;
+    let search_input = useAnimation();
+    let search_open = false;
 
     function toggleSearch(evt){
         if(search_open){

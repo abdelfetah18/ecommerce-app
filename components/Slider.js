@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 export default function Slider({ images }){
-    var slider = useRef();
-    var [slider_pos,setSliderPos] = useState(0);
+    let slider = useRef();
+    let [slider_pos,setSliderPos] = useState(0);
 
     useEffect(() => {
         slider.current.scrollTo({

@@ -9,19 +9,19 @@ import Link from "next/link";
 
 export default function Products({ products,categories,category }){
     const p_template = {name:"",price:{ value:"",currency:"" },category:{ name:"" },images:[] };
-    var [alertMessage,setAlertMessage] = useState("");
-    var alertAnimation = useAnimation();
-    var [dialog_state,setDialogState] = useState("New");
-    var [selected_product,setSelectedProduct] = useState(p_template);
-    var openMenuAnimation = useAnimation();
-    var new_product_dialog_animation = useAnimation();
-    var new_category_animation = useAnimation();
-    var [new_category_dialog_open,setNewCDOpen] = useState(false);
-    var [dialog_open,setDialogOpen] = useState(false);
-    var [menu_open,setMenuOpen] = useState(false);
-    var [is_loading,setIsLoading] = useState(false);
-    var images_input = useRef();
-    var [new_category,setNewCategory] = useState("");
+    let [alertMessage,setAlertMessage] = useState("");
+    let alertAnimation = useAnimation();
+    let [dialog_state,setDialogState] = useState("New");
+    let [selected_product,setSelectedProduct] = useState(p_template);
+    let openMenuAnimation = useAnimation();
+    let new_product_dialog_animation = useAnimation();
+    let new_category_animation = useAnimation();
+    let [new_category_dialog_open,setNewCDOpen] = useState(false);
+    let [dialog_open,setDialogOpen] = useState(false);
+    let [menu_open,setMenuOpen] = useState(false);
+    let [is_loading,setIsLoading] = useState(false);
+    let images_input = useRef();
+    let [new_category,setNewCategory] = useState("");
     
     
 
@@ -169,8 +169,8 @@ export default function Products({ products,categories,category }){
     }
 
     function uploadImages(evt){
-        var form = new FormData();
-        for(var i=0;i<evt.target.files.length;i++){
+        let form = new FormData();
+        for(let i=0;i<evt.target.files.length;i++){
             form.append("file_"+i,evt.target.files[i]);
         }
 

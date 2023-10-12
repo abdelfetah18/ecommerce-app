@@ -37,8 +37,8 @@ const MyOrders = ({ orders, setSelectedOrder, toggleOrder }) => {
                 orders.map((order,index) => {
                     
                     function getTotal(){
-                        var total = 0;
-                        for(var i=0;i<order.products.length;i++){
+                        let total = 0;
+                        for(let i=0;i<order.products.length;i++){
                             total += parseFloat(order.products[i].price.value);
                         }
                         

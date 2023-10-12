@@ -1,9 +1,8 @@
 import { motion,useAnimation } from "framer-motion";
-import { useState } from "react";
 
 export default function Input({ value_state,placeholder,type }){
-    var label_animation = useAnimation();
-    var [value,setValue] = value_state;
+    let label_animation = useAnimation();
+    let [value,setValue] = value_state;
 
     function onFocus(evt){
         label_animation.start({

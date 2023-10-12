@@ -34,11 +34,11 @@ export default function ProductDialogue({ product, product_dialog_open, setDialo
     }
 
     function addToCart(){
-        var myCart = localStorage.getItem('myCart');
+        let myCart = localStorage.getItem('myCart');
         if(myCart != null){
-            var items = JSON.parse(myCart);
-            var found = false;
-            for(var i=0;i<items.length;i++){
+            let items = JSON.parse(myCart);
+            let found = false;
+            for(let i=0;i<items.length;i++){
                 if(items[i]._id === product._id){
                     found = true;
                 }

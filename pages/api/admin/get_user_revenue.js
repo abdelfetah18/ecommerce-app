@@ -2,7 +2,7 @@ import { getLastMounthUserOrders, getUserRevenue } from "../../../database/clien
 
 export default async function handler(req, res) {
     if(req.method == "POST"){
-        var { user: { username } } = req.body;
+        let { user: { username } } = req.body;
         try {
             let mounth_orders = await getLastMounthUserOrders(username);
             let user = await getUserRevenue(username);
@@ -10,7 +10,6 @@ export default async function handler(req, res) {
         } catch (err){
             console.log(err)
             res.status(200).json({ status:"error",message: 'something went wrong!' });
-        } finally {
         }
     }else{
         res.status(405).json({ status:"error", message:"method not found!" });

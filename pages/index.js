@@ -17,7 +17,7 @@ export async function getServerSideProps({ req }){
 
 export default function Home({ products, categories, user, theme, setTheme }) {
   const category_name = "All";
-  var [_products,setProducts] = useState(products);
+  let [_products,setProducts] = useState(products);
 
   return (
     <div className="w-full h-screen flex flex-col items-center overflow-auto bg-slate-50 dark:bg-[#252936]">

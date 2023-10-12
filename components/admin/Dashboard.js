@@ -10,29 +10,29 @@ const mounths = ["Jan","Feb","March","April","May","June","July","Aug","Sept","O
 Chart.register([CategoryScale,LinearScale,PointElement,LineElement]);
 
 export default function Dashboard({ user,today_orders,total_custumers,last_orders }){
-    var [selected_user,setSelectedUser] = useState({ mounth_orders:[],user:{ username:"",total_revenue:0,orders_count:0 } });
-    var [graph_labels,setGraphLabels] = useState([]);
-    var [graph_data,setData] = useState([]);
-    var [selected_graph_data,setSelectedGraphData] = useState({ label:new Date().toLocaleDateString("en-GB"),data:"0" });
-    var myChart = useRef();
+    let [selected_user,setSelectedUser] = useState({ mounth_orders:[],user:{ username:"",total_revenue:0,orders_count:0 } });
+    let [graph_labels,setGraphLabels] = useState([]);
+    let [graph_data,setData] = useState([]);
+    let [selected_graph_data,setSelectedGraphData] = useState({ label:new Date().toLocaleDateString("en-GB"),data:"0" });
+    let myChart = useRef();
     
     useEffect(() => {
         if(selected_user.user != undefined){
-            var list = [];
-            var data = [];
-            var today = new Date();
-            var dd = today.getDate();
-            var mm = today.getMonth();
-            var yy = today.getFullYear();
-            for(var i=0;i<31;i++){
+            let list = [];
+            let data = [];
+            let today = new Date();
+            let dd = today.getDate();
+            let mm = today.getMonth();
+            let yy = today.getFullYear();
+            for(let i=0;i<31;i++){
                 list.push((((dd+i)%(mm%2 == 0 && mm != 8 && mm!= 2 ? 30 : 31))+1).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+(dd+i > 30 ? mm+1 : mm).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })+"/"+yy);
                 data.push(0);
             }
-            for(var i=0;i<selected_user.mounth_orders.length;i++){
-                var total = 0;
-                for(var j=0;j<selected_user.mounth_orders[i].products.length;j++){
+            for(let i=0;i<selected_user.mounth_orders.length;i++){
+                let total = 0;
+                for(let j=0;j<selected_user.mounth_orders[i].products.length;j++){
                     total += parseFloat(selected_user.mounth_orders[i].products[j].price.value);
-                }var index = parseInt(new Date(selected_user.mounth_orders[i]._createdAt).toLocaleDateString("en-GB").split("/")[0])-parseInt(new Date().toLocaleDateString("en-GB").split("/")[0]);
+                }let index = parseInt(new Date(selected_user.mounth_orders[i]._createdAt).toLocaleDateString("en-GB").split("/")[0])-parseInt(new Date().toLocaleDateString("en-GB").split("/")[0]);
                 data[index > 0 ? index : (30+index)] += parseFloat(total.toFixed(2));
 
             }
@@ -50,9 +50,9 @@ export default function Dashboard({ user,today_orders,total_custumers,last_order
 
 
     function calculateTodayRevnue(){
-        var today_revenue = 0;
-        for(var i=0;i<today_orders.length;i++){
-            for(var j=0;j<today_orders[i].products.length;j++){
+        let today_revenue = 0;
+        for(let i=0;i<today_orders.length;i++){
+            for(let j=0;j<today_orders[i].products.length;j++){
                 today_revenue += parseFloat(today_orders[i].products[j].price.value);
             }
         }
@@ -60,22 +60,22 @@ export default function Dashboard({ user,today_orders,total_custumers,last_order
     }
 
     function generateLabels(){
-        var list = [];
-        for(var i=1;i<30;i++){
+        let list = [];
+        for(let i=1;i<30;i++){
             list.push(i+" june")
         }
         return list;
     }
     function generateData(){
-        var list = [];
-        for(var i=1;i<30;i++){
+        let list = [];
+        for(let i=1;i<30;i++){
             list.push(Math.random()*10000)
         }
         return list;
     }
 
     function selectData(evt){
-        var data = getElementsAtEvent(myChart.current,evt);
+        let data = getElementsAtEvent(myChart.current,evt);
         if(data.length > 0){
             setSelectedGraphData({ label:graph_labels[data[0].index],data:graph_data[data[0].index] });
         }
@@ -196,8 +196,8 @@ export default function Dashboard({ user,today_orders,total_custumers,last_order
                     {
                         last_orders.map((order,i) => {
                             function getTotal(){
-                                var total = 0;
-                                for(var i=0;i<order.products.length;i++){
+                                let total = 0;
+                                for(let i=0;i<order.products.length;i++){
                                     total += parseFloat(order.products[i].price.value);
                                 }
                                 return total.toFixed(2);
@@ -205,7 +205,7 @@ export default function Dashboard({ user,today_orders,total_custumers,last_order
 
                             async function selectUser(){
                                 try {
-                                    var response = await axios.post("/api/admin/get_user_revenue",{ user:order.user });
+                                    let response = await axios.post("/api/admin/get_user_revenue",{ user:order.user });
                                 } catch (err){
                                     console.log("error:",err);
                                 } finally {

@@ -5,11 +5,11 @@ import { motion, useAnimation } from "framer-motion";
 import axios from "axios";
 
 export default function Signin(){
-    var [username,setUsername] = useState("");
-    var [password,setPassword] = useState("");
-    var [waiting,setWaiting] = useState(false);
-    var [alertMessage,setAlertMessage] = useState("");
-    var alertMessageAnimation = useAnimation();
+    let [username,setUsername] = useState("");
+    let [password,setPassword] = useState("");
+    let [waiting,setWaiting] = useState(false);
+    let [alertMessage,setAlertMessage] = useState("");
+    let alertMessageAnimation = useAnimation();
 
     function sign_in(evt){
         setWaiting(true);

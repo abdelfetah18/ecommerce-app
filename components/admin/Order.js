@@ -5,11 +5,11 @@ import { IoMdMore } from "react-icons/io";
 
 
 export default function Order({ order }){
-    var [_order,setOrder] = useState(order);
-    var menu_animation = useAnimation();
-    var [change_state_open,setChangeStateOpen] = useState(false);
-    var [open,setOpen] = useState(false);
-    var states_animation = useAnimation();
+    let [_order,setOrder] = useState(order);
+    let menu_animation = useAnimation();
+    let [change_state_open,setChangeStateOpen] = useState(false);
+    let [open,setOpen] = useState(false);
+    let states_animation = useAnimation();
 
     function toggle(){
         if(open){

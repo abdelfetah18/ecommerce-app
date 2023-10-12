@@ -3,7 +3,7 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
-  var [theme,setTheme] = useState("light");
+  let [theme,setTheme] = useState("light");
 
   useEffect(() => {
     // Load Theme mode from LocalStorage

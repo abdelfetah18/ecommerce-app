@@ -5,17 +5,17 @@ import { motion, useAnimation } from "framer-motion";
 import axios from "axios";
 
 export default function SignUp(){
-    var [username,setUsername] = useState("");
-    var [email,setEmail] = useState("");
-    var [password,setPassword] = useState("");
-    var [waiting,setWaiting] = useState(false);
-    var [alertMessage,setAlertMessage] = useState("");
-    var alertMessageAnimation = useAnimation();
+    let [username,setUsername] = useState("");
+    let [email,setEmail] = useState("");
+    let [password,setPassword] = useState("");
+    let [waiting,setWaiting] = useState(false);
+    let [alertMessage,setAlertMessage] = useState("");
+    let alertMessageAnimation = useAnimation();
 
     async function sign_up(evt){
         setWaiting(true);
         try {
-            var response = await axios.post("/api/user/sign_up",{ username,email,password },{
+            let response = await axios.post("/api/user/sign_up",{ username,email,password },{
                 Headers:{
                     "Content-Type":"json/application"
                 }
@@ -80,7 +80,7 @@ export default function SignUp(){
                 </div>
             </div>
             <div className="w-1/3 h-screen flex flex-col items-center justify-center bg-gray-900">
-                <div className="text-white text-3xl text-base font-bold" >Already have an account ?</div>
+                <div className="text-white text-3xl font-bold" >Already have an account ?</div>
                 <div className="text-white text-xl w-2/3 text-center my-4">
                     {"Sign in and discover a great amount of new opportunities!"}
                 </div>

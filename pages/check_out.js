@@ -17,16 +17,16 @@ export async function getServerSideProps({ req }){
 }
 
 export default function CheckOut({ user, theme, setTheme }){
-    var [shopping_cart,setShoppingCart] = useState([]);
-    var [total_price,setTotalPrice] = useState(0);
-    var [check_out_open,setCheckOutOpen] = useState(false);
-    var Paypal = usePayPalScriptReducer();
-    var checkoutDialog = useAnimation();
+    let [shopping_cart,setShoppingCart] = useState([]);
+    let [total_price,setTotalPrice] = useState(0);
+    let [check_out_open,setCheckOutOpen] = useState(false);
+    let Paypal = usePayPalScriptReducer();
+    let checkoutDialog = useAnimation();
 
     useEffect(() => {
-        var myCart = localStorage.getItem("myCart");
+        let myCart = localStorage.getItem("myCart");
         if(myCart != null){
-            var items = JSON.parse(myCart);
+            let items = JSON.parse(myCart);
             setShoppingCart(items);
         } 
     },[]);
@@ -34,7 +34,7 @@ export default function CheckOut({ user, theme, setTheme }){
     useEffect(() => {
         console.log("shopping cart updated!");
         setTotalPrice(0);
-        for(var i=0;i<shopping_cart.length;i++){
+        for(let i=0;i<shopping_cart.length;i++){
             setTotalPrice(state => state+=parseFloat(shopping_cart[i].price.value))
         }
     },[total_price,shopping_cart]);
@@ -55,8 +55,8 @@ export default function CheckOut({ user, theme, setTheme }){
                         }
                       },
                       items:(() => {
-                        var list = [];
-                        for(var i=0;i<shopping_cart.length;i++){
+                        let list = [];
+                        for(let i=0;i<shopping_cart.length;i++){
                                 console.log()
                                 list.push({
                                     name:shopping_cart[i].name,
@@ -138,11 +138,11 @@ export default function CheckOut({ user, theme, setTheme }){
                     {
                         shopping_cart.map((p,i) => {
                             function removeItem(){
-                                var myCart = localStorage.getItem('myCart');
+                                let myCart = localStorage.getItem('myCart');
                                 if(myCart != null){
-                                    var items = JSON.parse(myCart);
-                                    var newItems = [];
-                                    for(var i=0;i<items.length;i++){
+                                    let items = JSON.parse(myCart);
+                                    let newItems = [];
+                                    for(let i=0;i<items.length;i++){
                                         if(items[i]._id != p._id){
                                             newItems.push(items[i]);
                                         }

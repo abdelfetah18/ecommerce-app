@@ -23,9 +23,9 @@ export default function ShoppingCart({ shopping_cart_open }){
                 });
             });
         }else{
-            var myCart = localStorage.getItem('myCart');
+            let myCart = localStorage.getItem('myCart');
             if(myCart != null){
-                var items = JSON.parse(myCart);
+                let items = JSON.parse(myCart);
                 setShoppingCartItems(items);
             }
             shopping_cart_animation.start({
@@ -48,11 +48,11 @@ export default function ShoppingCart({ shopping_cart_open }){
             {
                 shopping_cart_items.map((item,index) => {
                     function removeItem(){
-                        var myCart = localStorage.getItem('myCart');
+                        let myCart = localStorage.getItem('myCart');
                         if(myCart != null){
-                            var items = JSON.parse(myCart);
-                            var newItems = [];
-                            for(var i=0;i<items.length;i++){
+                            let items = JSON.parse(myCart);
+                            let newItems = [];
+                            for(let i=0;i<items.length;i++){
                                 if(items[i]._id != item._id){
                                     newItems.push(items[i]);
                                 }

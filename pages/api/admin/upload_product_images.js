@@ -9,7 +9,7 @@ export const config = {
 
 export default function handle( req, res){
     if(req.method == "POST"){
-        var form = new Formidable();
+        let form = new Formidable();
         form.parse(req,async ( err,fields, files) => {
             if(err){
                 res.status(200).json({
@@ -17,10 +17,10 @@ export default function handle( req, res){
                     message:"something went wrong!"
                 });
             }else{
-                var images = [];
-                var f = Object.getOwnPropertyNames(files);
-                for(var i=0;i<f.length;i++){
-                    var asset = await uploadImage(files[f[i]].filepath);
+                let images = [];
+                let f = Object.getOwnPropertyNames(files);
+                for(let i=0;i<f.length;i++){
+                    let asset = await uploadImage(files[f[i]].filepath);
                     images.push(asset.image);
                 }
                 res.status(200).json({
