@@ -28,7 +28,7 @@ for the database, recently, i am using [`sanity.io`](https://sanity.io) , ( `San
 
 ### Database Schema:
 
-![database](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/database.png)
+![database](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/database.png)
 
 
 For Authentication and Authorization i am using `JWT (JSON Web Token)`.i am using it in middlewares.
@@ -41,25 +41,13 @@ For Authentication and Authorization i am using `JWT (JSON Web Token)`.i am usin
 to make make the project more easy to design, i used TailWind which is a CSS Framework.
 
 
-## Images from the app
-![home](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/home.png)
-![dark-mode-home](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-home.png)
-![2](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/2.png)
-![dark-mode-check_out](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-check_out.png)
-![7](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/7.png)
-![dark-mode-my_profile](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/dark-mode-my_profile.png)
----
-
-## Admin Dashboard:
-
----
-
-![9](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/9.png)
-![10](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/10.png)
-![11](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/11.png)
-![12](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/12.png)
-![13](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/13.png)
-![14](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/14.png)
-![15](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/15.png)
+## Images from the web app
+![Home](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/Home.png)
+![MyOrders](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/MyOrders.png)
+![Checkout](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/Checkout.png)
+![SignIn](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/SignIn.png)
+![SignUp](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/SignUp.png)
+![Dashboard](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/Dashboard.png)
+![CreateProduct](https://raw.githubusercontent.com/abdelfetah18/ecommerce-app/master/public/preview_images/CreateProduct.png)
 
 Thanks for reading and see you in my next project.
