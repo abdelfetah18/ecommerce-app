@@ -23,6 +23,10 @@ const GUEST_DENIED_ROUTES = [
 const WHITELIST_ROUTES = [
     "/api/user/sign_in",
     "/api/user/sign_up",
+    "/api/admin/layout_contents",
+    "/api/categories",
+    "/api/products",
+    "/api/search",
 ];
 
 export default async function middleware(req: NextRequest) {
